@@ -15,7 +15,7 @@ During the match, the app will show the player's and his opponent lifepoints. Wh
 # Tools and Techniques
 
 The app rely on the use of Bluetooth tecnology, in order to provide a serverless service.
-+ **React Native** is the candidate framework for build an app capable of use Bluetooth.
++ **Flutter** is the candidate framework for build an app capable of use Bluetooth.
 
 # Expected Outcomes
 TBD
