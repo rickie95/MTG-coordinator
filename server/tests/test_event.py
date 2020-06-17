@@ -1,14 +1,17 @@
+from unittest.mock import MagicMock
 import unittest
-import model
 
-from model.event import Event
+from src.model.event import Event
+from src.model.player import Player
 
 PLAYER_ID = "Fooo_123"
+EVENT_NAME = "FooEvent"
+MANAGERS_LIST = [Player("Foo"), Player("Bar")]
 
 class EventTest(unittest.TestCase):
 
     def setUp(self):
-        self.event = Event()
+        self.event = Event(EVENT_NAME, MANAGERS_LIST)
 
     def test_initial_status(self):
         """ Player list must be empty """
