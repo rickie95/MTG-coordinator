@@ -2,6 +2,12 @@ from flask import Flask
 from flask import jsonify
 from markupsafe import escape
 
+from src.manager.playermanager import PlayerManager
+from src.repository.playermongorep import PlayerMongoRepository
+
+player_repo = PlayerMongoRepository()
+player_manager = PlayerManager(player_repo)
+
 app = Flask(__name__)
  
 @app.route('/')
@@ -10,7 +16,7 @@ def hello_world():
 
 @app.route('/players')
 def get_players_list():
-    players = ['Jon', 'Mike', 'Doom guy']
+    players = player_manager.get_players_list()
     return jsonify([p for p in players])
 
 @app.route('/players/<player_id>', methods=['GET', 'POST', 'DELETE', 'PUT'])
