@@ -8,6 +8,9 @@ class PlayerMongoRepository:
     def get_players(self):
         return ['jon', 'mickey', 'brad']
 
+    def get_player(self, player_id):
+        return ['jon']
+
     def add_player(self, player):
         pass
 
